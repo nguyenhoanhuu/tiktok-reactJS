@@ -1,6 +1,5 @@
-import Header from "./Header/header";
+import Header from "~/components/Layout/components/Header/header";
 import Sidebar from "./SideBar/sidebar";
-
 function DefaultLayout({children}) {
     return (
         <div>
