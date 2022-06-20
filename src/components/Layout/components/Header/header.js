@@ -5,9 +5,12 @@ import {
   faCircleXmark,
   faMagnifyingGlass,
   faSpinner,
+  faPlus,
+  faSignIn,
 } from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react/headless";
 
+import Button from "~/components/Button";
 import styles from "./Header.module.scss";
 import images from "~/assets/images";
 import { Wrapper as PopperWrapper } from "~/components/Popper";
@@ -32,9 +35,9 @@ function Header() {
             <div className={cx("search-result")} tabIndex="-1" {...attrs}>
               <PopperWrapper>
                 <h4 className={cx("search-title")}>Account</h4>
-                <AccountItem/>
-                <AccountItem/>
-                <AccountItem/>
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
               </PopperWrapper>
             </div>
           )}
@@ -54,7 +57,14 @@ function Header() {
             </button>
           </div>
         </Tippy>
-        <div className={cx("actions")}></div>
+        <div className={cx("actions")}>
+          <Button text leftIcon={<FontAwesomeIcon className={cx("upload")} icon={faPlus} />}>
+            Upload
+          </Button>
+          <Button primary rightIcon={<FontAwesomeIcon icon={faSignIn} />}>
+            Log in
+          </Button>
+        </div>
       </div>
     </header>
   );
